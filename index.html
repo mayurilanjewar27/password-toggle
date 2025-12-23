@@ -2,54 +2,70 @@
 <html>
 <head>
     <title>Password Toggle</title>
+
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            background: #f2f2f2;
+            padding: 50px;
+        }
+
+        h1{
+            text-align: center;
+        }
+
+        .ico-toggle-password{
+            width: 28px;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .input-password{
+            padding: 8px 10px;
+            font-size: 18px;
+            border: none;
+            outline: none;
+        }
+
+        .input-password-container{
+            border: 1px solid #000;
+            width: fit-content;
+            display: flex;
+            align-items: center;
+            padding: 8px 15px;
+            border-radius: 40px;
+            gap: 10px;
+            background: #fff;
+            margin: auto;
+        }
+    </style>
 </head>
 
-<style>
-    .ico-toggle-password{
-        width: 30px;
-        cursor: pointer;
-    }
-
-    .input-password{
-        padding: 5px 10px;
-        font-size: 20px;
-        border: none;
-    }
-
-    .input-password:focus{
-        outline: none;
-    }
-
-    .input-password-container{
-        border: 1px solid black;
-        width: fit-content;
-        display: flex;
-        align-items: center;  
-        padding: 5px 10px;
-        border-radius: 40px;
-        gap: 10px;
-    }
-</style>
-
 <body>
+
     <h1>Password Show / Hide</h1>
 
     <div class="input-password-container">
-       
-        <input type="password" 
-               class="input-password" 
-               id="input-password" />
+        <input 
+            type="password" 
+            class="input-password" 
+            id="input-password"
+            placeholder="Enter password"
+        >
 
-        <img src="show.png" 
-             class="ico-toggle-password"
-             id="ico-toggle-password"
-             onclick="togglePassword()" />
+        <img 
+            src="show.png"
+            class="ico-toggle-password"
+            id="ico-toggle-password"
+            onclick="togglePassword()"
+            alt="Toggle Password"
+        >
     </div>
 
     <script>
         function togglePassword(){
-            const imgElement = document.getElementById("ico-toggle-password");
             const inputElement = document.getElementById("input-password");
+            const imgElement = document.getElementById("ico-toggle-password");
 
             if(inputElement.type === "password"){
                 inputElement.type = "text";
@@ -60,5 +76,6 @@
             }
         }
     </script>
+
 </body>
 </html>
