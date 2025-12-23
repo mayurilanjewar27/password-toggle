@@ -43,14 +43,17 @@
 
 <body>
 
-    <h1>Password Show / Hide</h1>
+<h1>Password Show / Hide</h1>
 
+<form>
     <div class="input-password-container">
         <input 
             type="password" 
             class="input-password" 
             id="input-password"
             placeholder="Enter password"
+            name="password"
+            autocomplete="current-password"
         >
 
         <img 
@@ -61,21 +64,22 @@
             alt="Toggle Password"
         >
     </div>
+</form>
 
-    <script>
-        function togglePassword(){
-            const inputElement = document.getElementById("input-password");
-            const imgElement = document.getElementById("ico-toggle-password");
+<script>
+    function togglePassword(){
+        const inputElement = document.getElementById("input-password");
+        const imgElement = document.getElementById("ico-toggle-password");
 
-            if(inputElement.type === "password"){
-                inputElement.type = "text";
-                imgElement.src = "hide.png";
-            } else {
-                inputElement.type = "password";
-                imgElement.src = "show.png";
-            }
+        if(inputElement.type === "password"){
+            inputElement.type = "text";
+            imgElement.src = "hide.png";
+        } else {
+            inputElement.type = "password";
+            imgElement.src = "show.png";
         }
-    </script>
+    }
+</script>
 
 </body>
 </html>
